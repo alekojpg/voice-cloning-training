@@ -1,11 +1,13 @@
 # Prediction interface for Cog ⚙️
 # https://github.com/replicate/cog/blob/main/docs/python.md
 
+import traceback
 import time
 import zipfile
 from cog import BasePredictor, Input, Path as CogPath
 from concurrent.futures import ThreadPoolExecutor
 from random import shuffle
+from sklearn.cluster import MiniBatchKMeans
 import json
 import os
 import pathlib
